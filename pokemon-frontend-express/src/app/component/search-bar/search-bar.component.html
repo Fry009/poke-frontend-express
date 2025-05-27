@@ -1,0 +1,46 @@
+<div class="search-container">
+  <mat-form-field appearance="outline" class="input-full">
+    <mat-label>Nombre del Pokémon</mat-label>
+    <input
+      matInput
+      [(ngModel)]="pokemonName"
+      (keyup.enter)="buscarPokemon()"
+      placeholder="Ej. pikachu"
+    />
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="buscarPokemon()"
+    [disabled]="!pokemonName.trim()"
+  >
+    Buscar
+  </button>
+
+  <mat-divider class="my-4"></mat-divider>
+
+  <div *ngIf="pokemonData">
+    <mat-card class="pokemon-card">
+      <div class="card-header-with-icon">
+        <mat-card-title>{{ pokemonData.name | titlecase }}</mat-card-title>
+        <button mat-icon-button (click)="toggleFavorito()" class="favorito-btn">
+          <mat-icon class="favorito-icon">
+            {{ esFavorito ? "star" : "star_border" }}
+          </mat-icon>
+        </button>
+      </div>
+
+      <img
+        mat-card-image
+        [src]="pokemonData.sprites.front_default"
+        alt="{{ pokemonData.name }}"
+      />
+
+      <mat-card-content>
+        <p><strong>Altura:</strong> {{ pokemonData.height }}</p>
+        <p><strong>Peso:</strong> {{ pokemonData.weight }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

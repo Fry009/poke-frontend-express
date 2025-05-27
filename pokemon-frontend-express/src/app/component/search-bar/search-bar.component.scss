@@ -1,0 +1,60 @@
+.search-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 2rem auto;
+  }
+  
+  .input-full {
+    width: 100%;
+  }
+  
+  button {
+    align-self: flex-start;
+  }
+  
+  mat-divider.my-4 {
+    margin: 1rem 0;
+  }
+  
+  mat-card {
+    transition: all 0.3s ease;
+    border-radius: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  
+    &:hover {
+      background-color: #f0f0f0;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+    }
+  
+    mat-card-image {
+      max-height: 200px;
+      object-fit: contain;
+      padding: 0.5rem;
+    }
+  
+    mat-card-content {
+      font-size: 14px;
+    }
+
+
+  }
+  
+  button {
+    transition: transform 0.2s ease;
+  
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .card-header-with-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  
